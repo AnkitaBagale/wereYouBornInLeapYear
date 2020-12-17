@@ -47,7 +47,10 @@ function checkBtnHandler(){
         var mm=dateArray[1];
         var yy=dateArray[2];
 
-        if(isNaN(dd) || isNaN(mm) || isNaN(yy)){
+		if(date.length>10){
+            output.innerText = error;
+		}
+        else if(isNaN(dd) || isNaN(mm) || isNaN(yy)){
             output.innerText = error;
         }
         else if(!Number.isInteger(Number(dd)) || !Number.isInteger(Number(mm)) || !Number.isInteger(Number(yy))){
