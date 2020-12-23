@@ -42,10 +42,11 @@ function checkBtnHandler(){
     var isLeapYearMessage;
 
     if(date){
-        var dateArray= date.split(/[/,-]/,2);
+        var dateArray= date.split(/[/,-]/);
         var dd=dateArray[0];
         var mm=dateArray[1];
         var yy=dateArray[2];
+        console.log(dd,mm,yy);
 
         if(isNaN(dd) || isNaN(mm) || isNaN(yy)){
             output.innerText = error;
