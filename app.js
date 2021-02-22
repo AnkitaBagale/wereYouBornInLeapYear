@@ -1,22 +1,22 @@
 
-var sections = document.querySelectorAll('.section');
+const sections = document.querySelectorAll('.section');
 
-var continueBtn=document.querySelector('#continueBtn');
+const continueBtn=document.querySelector('#continueBtn');
 
-var checkBtn=document.querySelector('#checkBtn');
+const checkBtn=document.querySelector('#checkBtn');
 
-var inputName=document.querySelector('#inputName');
+const inputName=document.querySelector('#inputName');
 
-var userNameDOM = document.querySelector('#userName');
+const userNameDOM = document.querySelector('#userName');
 
-var inputDate=document.querySelector('#inputDate');
+const inputDate=document.querySelector('#inputDate');
 
-var output = document.querySelector('#output');
+const output = document.querySelector('#output');
 
-var monthDays=[31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-var leapYearMessage="Your birth year is a leap year!";
-var notLeapYearMessage ="Your birth year is not a leap year!"
-var error= "Enter a valid date in the format DD/MM/YYYY";
+const monthDays=[31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const leapYearMessage="Your birth year is a leap year!";
+const notLeapYearMessage ="Your birth year is not a leap year!"
+const error= "Enter a valid date in the format DD/MM/YYYY";
 
 
 
@@ -26,11 +26,10 @@ checkBtn.addEventListener('click', checkBtnHandler);
 function continueBtnHandler(){
     if(inputName.value)
     {
-    var userNameJS= inputName.value;
+    const userNameJS= inputName.value;
     sections[0].style.display="none";
     sections[1].style.display="block";
     userNameDOM.innerText= userNameJS;
-    console.log(userNameJS);
     }
     else{
         alert("Please enter your name and then click on Continue");
@@ -38,15 +37,13 @@ function continueBtnHandler(){
 }
 
 function checkBtnHandler(){
-    var date = inputDate.value;
-    var isLeapYearMessage;
+    const date = inputDate.value;
 
     if(date){
-        var dateArray= date.split(/[/,-]/);
-        var dd=dateArray[0];
-        var mm=dateArray[1];
-        var yy=dateArray[2];
-        console.log(dd,mm,yy);
+        const dateArray= date.split(/[/,-]/);
+        const dd=dateArray[0];
+        const mm=dateArray[1];
+        const yy=dateArray[2];
 
         if(isNaN(dd) || isNaN(mm) || isNaN(yy)){
             output.innerText = error;
